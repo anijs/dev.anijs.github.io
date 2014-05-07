@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
 						var YUI3 = {
 							local: /<script src="..\/framework\/yui3\/3.11.0\/build\/yui\/yui-min.js"><\/script>/g,
-							prod: '<script src="http://yui.yahooapis.com/3.14.1/build/yui/yui.js"></script>'
+							prod: '<script src="//yui.yahooapis.com/3.14.1/build/yui/yui.js"></script>'
 						};
 
 						var AniJS = {
@@ -46,18 +46,18 @@ module.exports = function(grunt) {
 
 						var PureCSS = {
 							local: /<link rel="stylesheet" href="bower_components\/pure\/pure.css">/g,
-							prod: '<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">'
+							prod: '<link rel="stylesheet" href="//yui.yahooapis.com/pure/0.4.2/pure.css">'
 						};
 
 						var FontAwesome = {
 							local: /<link rel="stylesheet" href="lib\/font-awesome\/css\/font-awesome.min.css">/g,
-							prod: '<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">'
+							prod: '<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">'
 
 						};
 
 						var AnimateCSS = {
 							local: /<link rel="stylesheet" href="lib\/animationcss\/animate.css">/g,
-							prod: '<link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/3.1.0/animate.css">'
+							prod: '<link rel="stylesheet" href="//cdn.jsdelivr.net/animatecss/3.1.0/animate.css">'
 						};
 
 						//YUI3 local
