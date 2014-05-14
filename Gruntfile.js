@@ -72,16 +72,6 @@ module.exports = function(grunt) {
 
 						//FontAwesome
 						content = content.replace(FontAwesome.local, FontAwesome.prod);
-
-						//AnimateCSS
-						//content = content.replace(AnimateCSS.local, AnimateCSS.prod);
-
-						
-						// content = content.replace(/href="assets\/styles\/main.css"/g,'href="assets/styles/main-min.css"');
-						// content = content.replace(/src="conf\/yuiconf.js"/g,'src="conf/yuiconf-min.js"');
-						// content = content.replace(/src="conf\/appmessages.js"/g,'src="conf/appmessages-min.js"');
-						// content = content.replace(/src="conf\/appconf.js"/g,'src="conf/appconf-min.js"');
-						// content = content.replace(/src="script\/app.js"/g,'src="script/app-min.js"');
 						return content;
 					}
 				}
