@@ -10,8 +10,8 @@ YUI().use('node-base', 'node-event-delegate', 'autocomplete', 'autocomplete-high
     //Put this function into the helper
     AniJSDefaultHelper.validateCommandExecution = function(e, animationContext){
         var event = Y.one('#demoif').get('value'),
-            eventTarget = Y.one('#demoon').get('value') || '#demoon',
-            behaviorTarget = Y.one('#demoto').get('value') || '#demoto',
+            eventTarget = Y.one('#demoon').get('value') || '#demotryit',
+            behaviorTarget = Y.one('#demoto').get('value') || '#demotryit',
             behavior = Y.one('#demodo').get('value'),
             successMessage = 'Animation setting up good!!! </br>' +
                             'Please ' + event + ' on ' + eventTarget;
@@ -34,6 +34,9 @@ YUI().use('node-base', 'node-event-delegate', 'autocomplete', 'autocomplete-high
         animationContext.run();
         
     };
+
+
+    
 
     //Autocomplete
     var autocompleSources = APP_CONFIG.autoCompleteSources,
