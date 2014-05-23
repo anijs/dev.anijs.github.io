@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 
 						var AniJS = {
 							local: /<script src="..\/..\/anijs\/src\/anijs.js"><\/script>/g,
-							prod: '<script src="lib/anijs/anijs.js"></script>'
+							prod: '<script src="http://cdn.jsdelivr.net/anijs/0.4.0/anijs.js"></script>'
 						};
 
 						var PureCSS = {
