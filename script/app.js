@@ -12,7 +12,7 @@ YUI().use('node-base', 'node-event-delegate', 'autocomplete', 'autocomplete-high
         var event = Y.one('#demoif').get('value'),
             eventTarget = Y.one('#demoon').get('value') || '#demotryit',
             behaviorTarget = Y.one('#demoto').get('value') || '#demotryit',
-            behavior = Y.one('#demodo').get('value'),
+            behavior = AniJS.Parser.parseDoDefinition(Y.one('#demodo').get('value')),
             successMessage = 'Animation setting up good!!! </br>' +
                             'Please ' + event + ' on ' + eventTarget;
 
