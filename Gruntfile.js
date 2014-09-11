@@ -21,7 +21,8 @@ module.exports = function(grunt) {
 						'config/**/*',
 						'lib/**/*',
 						'!lib/font-awesome',
-						'script/**/*'
+						'script/**/*',
+						'lib/anijs/**/*'
 					],
 				dest: '../anijs.github.io/',
 				options: {
@@ -44,6 +45,10 @@ module.exports = function(grunt) {
 							prod: '<script src="lib/anijs/anijs.js"></script>'
 						};
 
+						var AniJSDomHelper = {
+							local: /<script src="..\/..\/anijs\/src\/helpers\/dom\/anijs-helper-dom.js"><\/script>/g,
+							prod: '<script src="lib/anijs/helpers/dom/anijs-helper-dom.js"></script>'
+						};
 						var PureCSS = {
 							local: /<link rel="stylesheet" href="bower_components\/pure\/pure.css">/g,
 							prod: '<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">'
@@ -51,7 +56,7 @@ module.exports = function(grunt) {
 
 						var FontAwesome = {
 							local: /<link rel="stylesheet" href="lib\/font-awesome\/css\/font-awesome.min.css">/g,
-							prod: '<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">'
+							prod: '<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css">'
 
 						};
 
@@ -66,7 +71,7 @@ module.exports = function(grunt) {
 						//AniJS
 						//TODO: When put it in CDN replace this code
 						content = content.replace(AniJS.local, AniJS.prod);
-
+						content = content.replace(AniJSDomHelper.local, AniJSDomHelper.prod);
 						//PureCSS
 						content = content.replace(PureCSS.local, PureCSS.prod);
 
