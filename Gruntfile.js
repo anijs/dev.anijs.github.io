@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask(
 		'prod',
-		'Compiles all of the assets and copies the files to the build directory.', 
+		'Compiles all of the assets and copies the files to the build directory.',
 		[ 'uglify', 'copy' ]
 	);
 };

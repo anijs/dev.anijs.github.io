@@ -2738,12 +2738,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     animation-timing-function: ease-in-out;
     opacity: 1;
   }
-
-  100% {
+  /*Please attention here*/
+  99% {
     -webkit-transform: translateY(700px);
     transform: translateY(700px);
     opacity: 0;
   }
+  
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  /*end Please attention here*/
 }
 
 @keyframes hinge {
@@ -2792,11 +2799,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     opacity: 1;
   }
 
-  100% {
+  /*Please attention here*/
+  99% {
     -webkit-transform: translateY(700px);
     -ms-transform: translateY(700px);
     transform: translateY(700px);
     opacity: 0;
+  }
+  
+  100% {
+    -webkit-transform: translateY(0); 
+    -ms-transform: translateY(0px);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
