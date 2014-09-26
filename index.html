@@ -29,7 +29,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/menu-collapse.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-    
+
+    <link rel="stylesheet" type="text/css" href="assets/css/notification-demo.css">
 </head>
 
 <body>
@@ -58,23 +59,23 @@
 
     <div class="splash-container">
 
-        <div class="balloon ball1" data-anijs="if: animationend, on: .splash-subhead, do: ball1-end, after: holdAnimClass;
+        <div class="balloon ball1" data-anijs="if: animationend, on: .splash-subhead, do: ball1-end, after: $holdAnimClass;
         if: transitionend, do: rubberBand; if: mouseover, do: rollIn, to: .ball2$.ball3$.ball4">
             <i class="flaticon-air1 orange"></i> 
         </div>
-        <div class="balloon ball2" data-anijs="if: animationend, on: .splash-subhead, do: ball2-end, after: holdAnimClass; if: transitionend, do: rubberBand; if: scroll, on: window, do: hinge; if: mouseover, do: hinge, to: .ball3$.ball4$.ball1$.splash$.pure-menu-heading">
+        <div class="balloon ball2" data-anijs="if: animationend, on: .splash-subhead, do: ball2-end, after: $holdAnimClass; if: transitionend, do: rubberBand; if: scroll, on: window, do: hinge; if: mouseover, do: hinge, to: .ball3$.ball4$.ball1$.splash$.pure-menu-heading">
             <i class="flaticon-air1 pink"></i> 
         </div>
-        <div class="balloon ball3" data-anijs="if: animationend, on: .splash-subhead, do: ball3-end, after: holdAnimClass; if: transitionend, do: rubberBand; if: mouseover, do: shake, to: .balloon">
+        <div class="balloon ball3" data-anijs="if: animationend, on: .splash-subhead, do: ball3-end, after: $holdAnimClass; if: transitionend, do: rubberBand; if: mouseover, do: shake, to: .balloon">
             <i class="flaticon-air1 green"></i> 
         </div>
-        <div class="balloon ball4" data-anijs="if: animationend, on: .splash-subhead, do: ball4-end, after: holdAnimClass; if: transitionend, do: rubberBand; if: mouseover, do: rotateIn, to: .ball3$.ball2$.ball1">
+        <div class="balloon ball4" data-anijs="if: animationend, on: .splash-subhead, do: ball4-end, after: $holdAnimClass; if: transitionend, do: rubberBand; if: mouseover, do: rotateIn, to: .ball3$.ball2$.ball1">
             <i class="flaticon-air1 white"></i> 
         </div>
         <div class="splash">
-            <h1 class="splash-head" data-anijs="if: onRunFinished, on: $AniJSEventProvider, do: swing animated; if: animationend, on: .balloon, do: swing">AniJS</h1>
+            <h1 class="splash-head" data-anijs="if: onRunFinished, on: $AniJSNotifier, do: swing animated; if: animationend, on: .balloon, do: swing">AniJS</h1>
             <p class="splash-subhead" data-anijs="if: animationend, on: .splash-head, do: bounce">
-                Declarative handling library for UI interactions
+                UI interaction Library for Web Designers in plain English
             </p>
             <p>
                <iframe class="first-iframe" data-anijs="if: animationend, on: .splash-head, do: hinge" src="http://ghbtns.com/github-btn.html?user=anijs&repo=anijs&type=watch&count=true&size=large"
@@ -90,26 +91,25 @@
             <h2 class="content-head is-center" data-anijs="if: click, do: testingAnim">A little demo</h2>
 
             <div class="pure-g">
-                <div class="l-box-lrg container-box pure-u-1 pure-u-med-1-2">
+                <div id="click-square" class="l-box-lrg container-box pure-u-1 pure-u-med-1-2">
                     <h3 class="content-subhead">
                         <i class="fa fa-rocket"></i>
                         Click Square Demo
                     </h3>
-                    <div class="demo-square demo1" data-anijs="if: click, do: flipInY, to: .container-box">
-                    </div>
-                    <p class="waveboard anijs-sintax">
+
+                    <p class="waveboard anijs-sintax anijs-sintax-dinamically">
                         <i class="fa fa-asterisk"></i>
                         <span class="anijs-reserved-if anijs-reserved-word">If</span>
                         <span>click,</span>
                         <span class="anijs-reserved-on anijs-reserved-word">On</span>
                         <span>Square,</span>
                         <span class="anijs-reserved-do anijs-reserved-word">Do</span>
-                        <span>flipInY animation</span>
+                        <span class="do-value">flipInY animation</span>
                         <span class="anijs-reserved-to anijs-reserved-word">To</span>
-                        <span>Container Boxes,</span>
+                        <span class="to-value">Container Boxes,</span>
                     </p>
 <!-- Syntax Highlight -->
-<div class="highlight highlight-xml"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"demo-square demo1"</span> <span class="na">data-anijs=</span><span class="s">"if: click, do: flipInY, to: .container-box"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<div class="highlight highlight-xml anijs-highlight-dinamically demo-toggle"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"demo-square demo1"</span> <span class="na">data-anijs=</span><span class="s">"if: click, do: <span class="do-value">flipInY</span>, to: <span class="to-value">.container-box"</span><span class="nt">&gt;&lt;/div&gt;</span>
 </pre></div>
 <!-- End Syntax Highlight -->
                 <p style="text-align:center">
@@ -117,54 +117,108 @@
                 </p>
                 </div>
 
-                <div class="l-box-lrg container-box pure-u-1 pure-u-med-1-2">
+                <div id="notification-demo" class="l-box-lrg container-box pure-u-1 pure-u-med-1-2">
                     <h3 class="content-subhead">
                         <i class="fa fa-rocket"></i>
-                        Tab Bar
+                        Notification App
                     </h3>
-                    <div class="pure-menu pure-menu-open pure-menu-horizontal demo">
-                        <input type="hidden" data-anijs=
-                            "if: mouseover, on: .tab, do: $removeClass active, to: .tab.active;
-                             if: mouseover, on: .tab, do: $addClass active, to: target">
-                        <h2 class="tab active">Github</h2>
-                          <p><i class="fa fa-github-alt bounce animated"></i></p>
-                        <h2 class="tab">Codepen</h2>
-                          <p><i class="fa fa-codepen rollIn animated"></i></p>
-
-                        <h2 class="tab">Reddit</h2>
-                          <p><i class="fa fa-reddit tada animated"></i></p>
+                    <!-- Demo notifications -->
+                    <div id="notification">
+                      <div class="toolbar">
+                        <div class="delete">
+                          <i class="fa fa-trash"></i>
+                        </div>
+                        <div class="app-icon load-more">
+                          <i class="fa fa-bell"></i>
+                        </div>
+                      </div>
+                      <div class="container">
+                        <div class="item note note-success">
+                          <div class="item-image note-icon">
+                            <i class="fa fa-heart"></i>
+                          </div>
+                          <div class="item-body note-text">
+                            Don't close me (;
+                          </div>
+                          <a href="#" class="note-close">
+                            <i class="fa fa-close"></i>
+                          </a>
+                        </div>
+                        <div class="item note note-secondary">
+                          <div class="item-image note-icon">
+                            <i class="fa fa-twitter"></i>
+                          </div>
+                          <div class="item-body note-text">
+                            Followed you!!!
+                          </div>
+                          <a href="#" class="note-close">
+                            <i class="fa fa-close"></i>
+                          </a>
+                        </div>
+                        <div class="item note">
+                          <div class="item-image note-icon">
+                            <i class="fa fa-facebook-square"></i>
+                          </div>
+                          <div class="item-body note-text">
+                            Two new likes ..
+                          </div>
+                          <a href="#" class="note-close">
+                            <i class="fa fa-close"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="read-more load-more">
+                        <i class="fa fa-bell"></i>
+                        Read More
+                      </div>
                     </div>
-                    <p class="waveboard anijs-sintax p-2-demo2">
+                    <!-- end Demo notifications -->
+                  <!-- The AniJS language -->
+                  <input type="hidden" data-anijs="
+                    if:click, on: .note-close, do: fadeOut animated, to: $parent target, after: $remove;
+
+                    if:click, on: .load-more, do: $clone .templates .cloned | 3, to: .container, after: emit cepv.dummyEvent;
+
+                    if:dummyEvent, on: $cepv, do: $addClass fadeIn animated,  to: $children .container | .cloned, after: $removeClass cloned hidden;
+
+                    if:click, on: .delete ,before: emit cepv.fooEvent, do: $remove, to: $children .container | div;
+                    " 
+                  >
+                  <!-- hidden notification item template -->
+                  <div class="templates hidden">
+                    <div class="item note note-gray cloned hidden">
+                      <div class="item-image note-icon">
+                        <i class="fa fa-coffee"></i>
+                      </div>
+                      <div class="item-body note-text">
+                        Lorem ipsum dolor
+                      </div>
+                      <a href="#" class="note-close">
+                        <i class="fa fa-close"></i>
+                      </a>
+                    </div>
+                  </div>
+                    <p class="waveboard anijs-sintax p-2-demo2 demo-toggle">
                         <i class="fa fa-asterisk"></i>
                         <span class="anijs-reserved-if anijs-reserved-word">If</span>
-                        <span>mouseover,</span>
+                        <span>click,</span>
                         <span class="anijs-reserved-on anijs-reserved-word">On</span>
-                        <span>tab</span>
+                        <span>close icon</span>
                         <span class="anijs-reserved-do anijs-reserved-word">Do</span>
-                        <span>$removeClass active</span>
+                        <span>remove</span>
                         <span class="anijs-reserved-to anijs-reserved-word">To</span>
-                        <span>Active tab</span>
-                    </p>
-                    <p class="waveboard anijs-sintax p-demo2">
-                        <i class="fa fa-asterisk"></i>
-                        <span class="anijs-reserved-if anijs-reserved-word">If</span>
-                        <span>mouseover,</span>
-                        <span class="anijs-reserved-on anijs-reserved-word">On</span>
-                        <span>tab</span>
-                        <span class="anijs-reserved-do anijs-reserved-word">Do</span>
-                        <span>$addClass active</span>
-                        <span class="anijs-reserved-to anijs-reserved-word">To</span>
-                        <span>target tab</span>
+                        <span>notification</span>
                     </p>
 <!-- Syntax Highlight -->
-<div class="highlight highlight-xml" data-anijs="if: animationend, on:.p-2-demo2, do:hinge"><pre><span class="nt">&lt;input</span><span class="na"> data-anijs=</span></br><span class="s">"if: mouseover, on: .tab, do: $removeClass active, to: .tab.active;</br>if: mouseover, on: .tab, do: $addClass active, to: target"</span></br><span class="nt">&gt;</span>
+<div class="highlight highlight-xml demo-toggle" data-anijs="if: animationend, on:.p-2-demo2, do:hinge"><pre><span class="nt">&lt;input</span><span class="na"> data-anijs=</span><span class="s">"if: click, on: .close, do: $remove, to: $parent target<span class="nt">&gt;</span>
 </pre></div>
 <!-- End Syntax Highlight -->
                 <p style="text-align:center">
                 <a style="text-decoration:underline" href="https://github.com/anijs/anijs/wiki/Playing-with-CSS-classes">Learn about it</a>
                 </p>
                 </div>
-            </div>
+                <!-- end notification app -->
+             </div>
 
         </div>
 
@@ -221,7 +275,7 @@
                         <span class="anijs-reserved-do anijs-reserved-word"></span>
                     </div>
                     <div class="pure-u-1 pure-u-med-1 pure-u-lrg-1">
-                        <button id="demotryit" class="pure-button pure-button-primary" data-anijs="if:click, do: displayTruebounceIn, to: #try .pure-alert,before:validateCommandExecution">Try it!</button>
+                        <button id="demotryit" class="pure-button pure-button-primary" data-anijs="if:click, do: displayTruebounceIn, to: #try .pure-alert,before:$validateCommandExecution">Try it!</button>
                     </div>
                 </div>
 
@@ -338,9 +392,8 @@
                             <a class="anijs-studio" href="https://chrome.google.com/webstore/detail/anijs-studio/alnnlebgnablnnbhidppfpcpmlopegib?hl=en">
                                 <img class="pure-img" src="assets/img/applehappy.png">
                             </a>
-                            
+
                         </div>
-                       
                         <p><a href="https://chrome.google.com/webstore/detail/anijs-studio/alnnlebgnablnnbhidppfpcpmlopegib?hl=en">AniJS Studio</a> is a chrome extension that will allow you to create, test, <br>and add animations prototypes to any webpage, or web application easily.</p>
                     </div>
                 </div>
@@ -421,6 +474,7 @@
     <!-- AniJS Library -->
     <script src="../../anijs/src/anijs.js"></script>
     <script src="../../anijs/src/helpers/dom/anijs-helper-dom.js"></script>
+
     <!-- Syntax Highlight -->
     <script src="lib/highlight/highlight.pack.js"></script>
     <script>
