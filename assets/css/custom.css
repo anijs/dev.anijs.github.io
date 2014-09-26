@@ -418,3 +418,35 @@ pre {
 	background: #eee;
 	cursor: pointer;
 }
+
+#ui-components img{
+  max-width: 85%;
+  margin-left: 7.5%;
+  max-height: 100px;
+  min-height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ui-components .pure-g{
+  background: rgb(248, 249, 250);
+
+}
+
+#ui-components .more-examples-button-container{
+  margin-top: 30px;
+  width: 95%;
+}
+
+#more-examples{
+  float: right;
+}
+
+.click-square-content-demo{
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18px 0px;
+}

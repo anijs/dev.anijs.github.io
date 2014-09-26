@@ -106,7 +106,7 @@ YUI().use('node-base', 'node-event-delegate', 'autocomplete', 'autocomplete-high
         }
         squareCollectionHTML += tempSquareHTML;
     }
-    baseNode.one('.content-subhead').insert(Y.Node.create(squareCollectionHTML), 'after');
+    baseNode.one('.click-square-content-demo').append(Y.Node.create(squareCollectionHTML));
     var anijsDinamicallySintax = Y.one('.anijs-sintax-dinamically'),
         doValue = anijsDinamicallySintax.one('.do-value'),
         toValue = anijsDinamicallySintax.one('.to-value'),

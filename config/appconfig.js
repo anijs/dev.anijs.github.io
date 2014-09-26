@@ -79,7 +79,7 @@ APP_CONFIG = {
 		]
 	},
   colorSquares: [
-    'blue-bg',
+    'blue-bg tada animated infinite',
     'orange-bg',
     'pink-bg',
     'green-bg',
@@ -95,10 +95,6 @@ APP_CONFIG = {
     'orange-lgh-bg',
     'green-bg',
     'yellow-lgh-bg',
-    'blue-lgh-bg',
-    'pink-lgh-bg',
-    'green-lgh2-bg',
-    'blue-lgh-bg',
   ],
   behaviorSquares: [
     { do:'flipInY animated', to:'.container-box' },
@@ -114,13 +110,8 @@ APP_CONFIG = {
     { do:'bounceIn animated', to:'$ancestors target | .container-box' },
     { do:'flip animated', to:'$closest target' },
     { do:'rubberBand animated', to:'.container-box' },
+    { do:'rollIn animated', to:'$children .container-box' },
     { do:'tada animated', to:'.container-box' },
     { do:'wobble animated', to:'.container-box' },
-    { do:'fadeInDown animated', to:'.container-box' },
-    { do:'fadeInRight animated', to:'.container-box' },
-    { do:'rollIn animated', to:'$children .container-box' },
-    { do:'flash animated', to:'$find .container-box | .demo1' },
-    { do:'flipInY animated', to:'.container-box' },
-    { do:'$clone .templates .cloned | 3', to:'.container' }
   ]
 };
