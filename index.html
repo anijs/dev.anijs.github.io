@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/menu-collapse.css">
     <link rel="stylesheet" href="assets/css/custom.css">
 
-    <link href='http://fonts.googleapis.com/css?family=Eater' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="assets/css/notification-demo.css">
 </head>
 
 <body>
@@ -61,16 +61,16 @@
 
         <div class="balloon ball1" data-anijs="if: animationend, on: .splash-subhead, do: ball1-end, after: $holdAnimClass;
         if: transitionend, do: rubberBand; if: mouseover, do: rollIn, to: .ball2$.ball3$.ball4">
-            <i class=" flaticon-air1 flaticon-halloween252 orange"></i>
+            <i class="flaticon-air1 orange"></i> 
         </div>
         <div class="balloon ball2" data-anijs="if: animationend, on: .splash-subhead, do: ball2-end, after: $holdAnimClass; if: transitionend, do: rubberBand; if: scroll, on: window, do: hinge; if: mouseover, do: hinge, to: .ball3$.ball4$.ball1$.splash$.pure-menu-heading">
-            <i class="flaticon-air1  flaticon-halloween280 pink"></i>
+            <i class="flaticon-air1 pink"></i> 
         </div>
         <div class="balloon ball3" data-anijs="if: animationend, on: .splash-subhead, do: ball3-end, after: $holdAnimClass; if: transitionend, do: rubberBand; if: mouseover, do: shake, to: .balloon">
-            <i class="flaticon-air1 green flaticon-halloween3"></i>
+            <i class="flaticon-air1 green"></i> 
         </div>
         <div class="balloon ball4" data-anijs="if: animationend, on: .splash-subhead, do: ball4-end, after: $holdAnimClass; if: transitionend, do: rubberBand; if: mouseover, do: rotateIn, to: .ball3$.ball2$.ball1">
-            <i class="flaticon-air1 flaticon-halloween39 white"></i>
+            <i class="flaticon-air1 white"></i> 
         </div>
         <div class="splash">
             <h1 class="splash-head" data-anijs="if: onRunFinished, on: $AniJSNotifier, do: swing animated; if: animationend, on: .balloon, do: swing">AniJS</h1>
